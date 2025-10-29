@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './index.css'; // গ্লোবাল স্টাইল ইম্পোর্ট
-import { BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 
 // কম্পোনেন্ট ইম্পোর্ট
 import Header from './components/Header';
@@ -96,11 +96,6 @@ function AppContent() {
   );
 }
 
-// ধাপ ২: 'App' কম্পোনেন্ট এখন শুধু রাউটারকে র‍্যাপ (wrap) করবে
 export default function App() {
-  return (
-    <BrowserRouter>
-      <AppContent />
-    </BrowserRouter>
-  );
+  return <AppContent />
 }

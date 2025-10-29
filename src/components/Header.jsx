@@ -117,7 +117,7 @@ const Header = ({
               <button
                 key={link.id}
                 onClick={() => navigateTo(link.id)}
-                className={`relative group flex items-center gap-2 cursor-pointer text-base sm:text-lg md:text-xl lg:text-2xl font-medium transition-all duration-300 px-3 py-1 rounded-md ${
+                className={`relative group flex items-center gap-2 cursor-pointer text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-semibold transition-all duration-300 px-3 py-1 rounded-md ${
                   activePage === link.id
                     ? "text-blue-900 bg-teal-300 shadow-md"
                     : `${navText} ${navHoverBg} hover:text-white`
@@ -139,7 +139,7 @@ const Header = ({
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
-              className="lg:hidden fixed inset-0 z-[998]"
+              className="lg:hidden fixed inset-0 z-50 bg-black/90 backdrop-blur-sm overflow-auto"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
