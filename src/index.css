@@ -28,3 +28,118 @@ h1, h2, h3, h4, h5, h6 {
     z-index: -10;
 }
 
+/* Crystal Mist Mobile Menu - Full Style */
+/* Crystal Mist Mobile Menu - ছবির মতো ডিজাইন (কন্টেন্ট তোমার) */
+.crystal-mist-menu {
+  position: relative;
+  width: 90vw;
+  max-width: 420px;
+  height: auto;
+  padding: 32px 24px;
+  text-align: center; /* সবকিছু মাঝে */
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+
+  
+  /* ফ্রস্টেড গ্লাস */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* লোগো + নাম সেকশন */
+.menu-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.menu-header img {
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.menu-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0px;
+}
+
+.menu-header p {
+  font-size: 14px;
+  color: #4FD1C5; /* teal-300 */
+  font-weight: 500;
+}
+
+/* ন্যাভিগেশন গ্রিড */
+.crystal-mist-menu nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+}
+
+.crystal-mist-menu nav button {
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 500;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.crystal-mist-menu nav button:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* CTA বাটন - ছবির Get Started এর মতো */
+.cta-button {
+  width: 100%;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+}
+
+.cta-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ফুটার */
+.menu-footer {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}

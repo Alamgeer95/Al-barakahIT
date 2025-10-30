@@ -54,7 +54,6 @@ const Header = ({
 
   const navText = isDarkMode ? "text-gray-300" : "text-gray-700";
   const navHoverBg = isDarkMode ? "hover:bg-teal-300/50" : "hover:bg-teal-200/50";
-  const menuBg = isDarkMode ? "bg-white/10" : "bg-white/90";
   const menuText = isDarkMode ? "text-gray-200" : "text-gray-800";
 
   return (
@@ -86,7 +85,7 @@ const Header = ({
                 className="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 lg:h-12 lg:w-12 rounded-full object-cover"
               />
               <span
-                className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-blue-500"
+                className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-blue-500"
               >
                 Al-barakah IT
               </span>
@@ -135,96 +134,112 @@ const Header = ({
           </nav>
         </div>
 
-        {/* Mobile Menu */}
+        {/* ============ মোবাইল মেনু (পরিবর্তিত) ============ */}
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
-              className="lg:hidden fixed inset-0 z-50 bg-black/90 backdrop-blur-sm overflow-auto"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
-            >
-              {/* Overlay */}
+  className="lg:hidden fixed inset-0 z-50 bg-black/90 backdrop-blur-sm overflow-hidden flex justify-center items-center"
+  
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  exit={{ opacity: 0 }}
+  transition={{ duration: 0.4, ease: "easeInOut" }}
+>
+              {/* Overlay (বন্ধ করার জন্য) */}
               <motion.div
-                className={`absolute inset-0 backdrop-blur-3xl ${
-                  isDarkMode
-                    ? "bg-gradient-to-br from-[#0a0f1f]/90 via-[#0b1c3b]/90 to-[#000000]/90"
-                    : "bg-white/90"
-                }`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
+                className="absolute inset-0"
                 onClick={() => setIsMenuOpen(false)}
               />
 
-              {/* Sidebar Menu */}
+              {/* ফ্রস্টেড গ্লাস কার্ড */}
               <motion.div
-                className={`relative z-50 flex flex-col h-full w-75 px-4 sm:px-6 md:px-8 py-6 ${menuBg} border-r border-white/10 shadow-1xl backdrop-blur-2xl overflow-y-auto`}
-                initial={{ x: -300, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: -300, opacity: 0 }}
-                transition={{ type: "spring", stiffness: 90, damping: 15 }}
-              >
-                {/* Header */}
-                <div className="flex items-center gap-3 mb-8">
-                  <img
-                    src="/Al-barakahIT-logo.png"
-                    alt="Logo"
-                    className="w-10 h-10 rounded-full shadow-md ring-2 ring-white/20"
-                  />
-                  <h2 className="text-white text-2xl font-bold tracking-wide drop-shadow-md">
-                    মেনুবার
-                  </h2>
-                </div>
+  className="crystal-mist-menu"
+  
+  // ওপেন হলে: মাঝ থেকে ফুস করে উঠবে
+  initial={{ 
+    scale: 0, 
+    y: 100, 
+    opacity: 0 
+  }}
+  animate={{ 
+    scale: 1, 
+    y: 0, 
+    opacity: 1 
+  }}
 
-                {/* Navigation */}
-                <nav className="flex flex-col space-y-3">
-                  {navLinks.map((link) => (
-                    <motion.button
-                      key={link.id}
-                      onClick={() => {
-                        navigateTo(link.id);
-                        setIsMenuOpen(false);
-                      }}
-                      whileHover={{ scale: 1.03, x: 4 }}
-                      whileTap={{ scale: 0.97 }}
-                      className={`w-full text-left py-3 px-4 rounded-lg font-medium transition-all duration-300 ${menuText} hover:bg-gradient-to-r hover:from-blue-600/40 hover:to-teal-500/40 hover:text-white flex items-center gap-4 cursor-pointer`}
-                    >
-                      <Icon name={link.icon} className="h-5 w-5" />
-                      {link.title}
-                    </motion.button>
-                  ))}
+  // ক্লোজ হলে: নিচে ডুবে যাবে
+  exit={{ 
+    scale: 0.3, 
+    y: 300, 
+    opacity: 0 
+  }}
 
-                  <motion.button
-                    onClick={() => {
-                      navigateTo("contact");
-                      setIsMenuOpen(false);
-                    }}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-full mt-6 cursor-pointer bg-gradient-to-r from-teal-500 to-blue-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg text-lg hover:shadow-blue-500/40 transition-transform hover:scale-105"
-                  >
-                    ফ্রি কনসাল্টেশন
-                  </motion.button>
-                </nav>
+  // স্মুথ, স্মার্ট, প্রিমিয়াম এনিমেশন
+  transition={{ 
+    type: "spring",
+    stiffness: 260,
+    damping: 20,
+    mass: 0.8
+  }}
+>
+  {/* লোগো + নাম */}
+  <div className="menu-header">
+    <img
+      src="/Al-barakahIT-logo.png"
+      alt="Logo"
+      className="w-16 h-16 rounded-2xl shadow-2xl"
+    />
+    <h2>Al-barakah IT</h2>
+    <p>Premium IT Solutions</p>
+  </div>
 
-                {/* Close Button */}
-                <motion.button
-                  onClick={() => setIsMenuOpen(false)}
-                  className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors"
-                  whileHover={{ rotate: 90 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Icon name="x" className="h-7 w-7" />
-                </motion.button>
+  {/* ন্যাভিগেশন লিংক */}
+  <nav>
+    {navLinks.map((link) => (
+      <motion.button
+        key={link.id}
+        onClick={() => {
+          navigateTo(link.id);
+          setIsMenuOpen(false);
+        }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.97 }}
+        className="text-white"
+      >
+        <Icon name={link.icon} className="h-5 w-5" />
+        {link.title}
+      </motion.button>
+    ))}
 
-                {/* Footer */}
-                <div className="mt-6 pt-6 text-gray-400 text-sm text-center border-t border-white/10">
-                  © {new Date().getFullYear()} Al-barakah IT — All Rights Reserved
-                </div>
-              </motion.div>
+    {/* CTA বাটন */}
+    <motion.button
+      onClick={() => {
+        navigateTo("contact");
+        setIsMenuOpen(false);
+      }}
+      className="cta-button"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.98 }}
+    >
+      ফ্রি কনসাল্টেশন
+    </motion.button>
+  </nav>
+
+  {/* ক্লোজ বাটন */}
+  <motion.button
+    onClick={() => setIsMenuOpen(false)}
+    className="absolute top-6 right-6 text-white/80 hover:text-white p-2 rounded-full bg-white/10 backdrop-blur-md"
+    whileHover={{ rotate: 90, scale: 1.1 }}
+    transition={{ duration: 0.3 }}
+  >
+    <Icon name="x" className="h-6 w-6" />
+  </motion.button>
+
+  {/* ফুটার */}
+  <div className="menu-footer">
+    © {new Date().getFullYear()} Al-barakah IT — All Rights Reserved
+  </div>
+</motion.div>
             </motion.div>
           )}
         </AnimatePresence>
