@@ -76,7 +76,7 @@ const Header = ({
           <div className="flex justify-between items-center">
             {/* Logo and Title */}
             <h1
-              className="flex items-center gap-2 sm:gap-3 cursor-pointer pl-2 sm:pl-3"
+              className="flex items-center gap-2 sm:gap-3 cursor-pointer pl-2 sm:pl-3 select-none"
               onClick={() => navigateTo("home")}
             >
               <img
@@ -204,7 +204,7 @@ const Header = ({
         }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.97 }}
-        className="text-white"
+        className={`${menuText} ${navHoverBg} hover:text-white transition-colors duration-300`}
       >
         <Icon name={link.icon} className="h-5 w-5" />
         {link.title}

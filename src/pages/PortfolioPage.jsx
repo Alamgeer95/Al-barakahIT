@@ -3,8 +3,9 @@ import { Helmet } from 'react-helmet-async';
 import Animated from '../components/Animated';
 
 const portfolioItems = [
-    { title: 'ই-কমার্স ওয়েবসাইট', category: 'ওয়েব ডেভেলপমেন্ট', img: 'https://placehold.co/600x400/0F172A/38BDF8?text=প্রজেক্ট+১' },
-    { title: 'ফুড ডেলিভারি অ্যাপ', category: 'মোবাইল অ্যাপ', img: 'https://placehold.co/600x400/0F172A/34D399?text=প্রজেক্ট+২' },
+    { title: 'শিক্ষা প্রতিষ্ঠানের ওয়েবসাইট', category: 'ওয়েব ডেভেলপমেন্ট', img: '/Jamia-qasemia.png' },
+    { title: 'জব প্লাটফরম', category: 'ওয়েব ডেভেলপমেন্ট', img: 'KhedmatBD.png' },
+    { title: 'ফুড ডেলিভারি অ্যাপই-কমার্স ওয়েবসাইট', category: 'মোবাইল অ্যাপ', img: 'https://placehold.co/600x400/0F172A/34D399?text=প্রজেক্ট+২' },
     { title: 'কর্পোরেট ব্র্যান্ডিং', category: 'গ্রাফিক ডিজাইন', img: 'https://placehold.co/600x400/0F172A/FBBF24?text=প্রজেক্ট+৩' },
     { title: 'রিয়েল এস্টেট পোর্টাল', category: 'ওয়েব ডেভেলপমেন্ট', img: 'https://placehold.co/600x400/0F172A/A78BFA?text=প্রজেক্ট+৪' },
 ];
@@ -29,7 +30,7 @@ const PortfolioPage = ({ isOverview = false, navigateTo }) => {
                         <Animated key={index} className={`delay-${index*100}`}>
                             <div className="group rounded-xl overflow-hidden border border-gray-800 hover:shadow-2xl hover:shadow-blue-900/30 transition-all duration-300">
                                 <div className="relative">
-                                    <img src={item.img} alt={item.title} className="w-full h-60 object-cover transform group-hover:scale-105 transition-transform duration-500" />
+                                    <img src={item.img} alt={item.title} className="w-full h-60 object-contain bg-gray-900 transform group-hover:scale-105 transition-transform duration-500" />
                                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/70 transition-all duration-300 flex items-center justify-center p-4">
                                         <div className="text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                                             <h3 className="text-white text-2xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500">{item.title}</h3>
