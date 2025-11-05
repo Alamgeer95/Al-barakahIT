@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import Animated from '../components/Animated';
 
 const portfolioItems = [
-    { title: 'শিক্ষা প্রতিষ্ঠানের ওয়েবসাইট', category: 'ওয়েব ডেভেলপমেন্ট', img: '/Jamia-qasemia.png' },
+    { title: 'শিক্ষা প্রতিষ্ঠানের ওয়েবসাইট', category: 'ওয়েব ডেভেলপমেন্ট', img: '/Jamia-qasemia.jpg' },
     { title: 'জব প্লাটফরম', category: 'ওয়েব ডেভেলপমেন্ট', img: 'KhedmatBD.png' },
     { title: 'ফুড ডেলিভারি অ্যাপই-কমার্স ওয়েবসাইট', category: 'মোবাইল অ্যাপ', img: 'https://placehold.co/600x400/0F172A/34D399?text=প্রজেক্ট+২' },
     { title: 'কর্পোরেট ব্র্যান্ডিং', category: 'গ্রাফিক ডিজাইন', img: 'https://placehold.co/600x400/0F172A/FBBF24?text=প্রজেক্ট+৩' },
