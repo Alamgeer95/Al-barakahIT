@@ -8,6 +8,8 @@ const servicesData = [
   { icon: 'shoppingCart', title: 'ই-কমার্স সল্যুশন', description: 'সম্পূর্ণরূপে কার্যকর এবং নিরাপদ ই-কমার্স প্ল্যাটফর্ম তৈরি করি যা আপনার বিক্রয় বৃদ্ধিতে সহায়তা করে।'},
   { icon: 'smartphone', title: 'মোবাইল অ্যাপ ডেভেলপমেন্ট', description: 'অ্যান্ড্রয়েড এবং আইওএস প্ল্যাটফর্মের জন্য ইউজার-ফ্রেন্ডলি এবং আকর্ষণীয় মোবাইল অ্যাপ তৈরি করি।'},
   { icon: 'penTool', title: 'গ্রাফিক ডিজাইন', description: 'আপনার ব্র্যান্ডের জন্য লোগো, ব্যানার, এবং অন্যান্য মার্কেটিং উপকরণ ডিজাইন করে থাকি।'},
+  { icon: 'trendingUp', title: 'এড বুস্টিং সার্ভিস', description: 'বিভিন্ন অনলাইন প্লাটফর্মে (ফেসবুক, ইউটিউব, গুগল, ইনস্টাগ্রাম) আপনার অ্যাডগুলোকে বুস্টিং সেবা প্রদান করি।'},
+  { icon: 'zap', title: 'পণ্য আমদানি সার্ভিস', description: 'আলি বাবা, আলি এক্সপ্রেস, অ্যামাজনসহ অন্যান্য বৈদেশিক ই-কমার্স সাইট থেকে যেকোনো পণ্য আমদানির সেবা প্রদান করি।'}
 ];
 
 const ServicesPage = ({ isOverview = false, navigateTo }) => {
@@ -17,7 +19,7 @@ const ServicesPage = ({ isOverview = false, navigateTo }) => {
             {!isOverview && (
             <Helmet>
                     <title>আমাদের সার্ভিসসমূহ - Al-barakah IT</title>
-                    <meta name="description" content="ওয়েব ডেভেলপমেন্ট, একাডেমিক সল্যুশন, ই-কমার্স সল্যুশন, মোবাইল অ্যাপ ডেভেলপমেন্ট এবং গ্রাফিক ডিজাইনসহ আমাদের সকল প্রফেশনাল সেবা সম্পর্কে জানুন।" />
+                    <meta name="description" content="ওয়েব ডেভেলপমেন্ট, একাডেমিক সল্যুশন, ই-কমার্স সল্যুশন, মোবাইল অ্যাপ ডেভেলপমেন্ট, গ্রাফিক ডিজাইন, এড বুস্টিং এবং বৈদেশিক ই-কমার্স সাইট থেকে পণ্য আমদানিসহ আমাদের সকল প্রফেশনাল সেবা সম্পর্কে জানুন।" />
             </Helmet>
         )}
             <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12">
@@ -25,7 +27,7 @@ const ServicesPage = ({ isOverview = false, navigateTo }) => {
                     <h2 className="text-3xl md:text-5xl font-extrabold text-white">আমাদের সার্ভিসসমূহ</h2>
                     <p className="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">আমরা আপনার ডিজিটাল উপস্থিতিকে শক্তিশালী করতে বিভিন্ন ধরনের সেবা প্রদান করি।</p>
                 </Animated>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {servicesData.map((service, index) => (
                         <Animated key={index} className={`delay-${index * 100}`}>
                             <div className="bg-gray-900/50 p-8 rounded-xl border border-gray-800 group hover:border-teal-500/50 hover:-translate-y-2 transition-all duration-300 flex flex-col h-full">

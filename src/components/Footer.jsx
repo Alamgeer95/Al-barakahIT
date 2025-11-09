@@ -23,8 +23,24 @@ const Footer = ({ navLinks, navigateTo }) => {
         +8801569-151297
       </a>
     </li>
+    <li>
+      হোয়াটসঅ্যাপ: 
+      <a
+                    href="https://wa.me/8801569151297"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-teal-300 transition flex items-center"
+                  >
+                    +8801569-151297
+                    <span className="ml-1 text-xs bg-green-600 text-white px-2 py-0.5 rounded-full">Live</span>
+                  </a>
+    </li>
+
   </ul>
+
+
 </div>
+
                     <div><h4 className="font-semibold text-lg mb-4 text-white">সার্বক্ষণিক আমাদের সাথে সংযুক্ত থাকুন</h4><div className="flex"><input type="email" placeholder="আপনার ইমেইল" className="w-full rounded-l-lg p-2 bg-gray-800 border border-gray-700 text-white focus:outline-none focus:ring-1 focus:ring-teal-500"/><button className="bg-gradient-to-r from-teal-500 to-blue-600 text-white p-2 px-4 rounded-r-lg hover:opacity-90 transition-opacity">➔</button></div></div>
                 </div>
                 <div className="border-t border-gray-800 mt-8 pt-6 text-center text-gray-500"><p>&copy; {new Date().getFullYear()} Al-barakah IT. সর্বস্বত্ব সংরক্ষিত।</p></div>
