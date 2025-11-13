@@ -29,104 +29,111 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Crystal Mist Mobile Menu - Full Style */
-/* Crystal Mist Mobile Menu - ছবির মতো ডিজাইন (কন্টেন্ট তোমার) */
 .crystal-mist-menu {
   position: relative;
-  width: 90vw;
-  max-width: 420px;
+  width: 95vw; /* ডিফল্ট: স্ক্রিনের ৯৫% */
+  max-width: min(420px, 95vw); /* সর্বোচ্চ ৪২০px, কিন্তু স্ক্রিনের চেয়ে বড় হবে না */
   height: auto;
-  padding: 32px 24px;
-  text-align: center; /* সবকিছু মাঝে */
-  transform-style: preserve-3d;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
-
+  max-height: min(90vh, 800px); /* সর্বোচ্চ উচ্চতা সীমিত */
+  padding: clamp(16px, 4vw, 32px) clamp(12px, 3vw, 24px); /* ফ্লেক্সিবল প্যাডিং */
   
   /* ফ্রস্টেড গ্লাস */
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border-radius: 28px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  border-radius: clamp(16px, 2vw, 28px); /* রেস্পন্সিভ রাউন্ডেড কর্নার */
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
   
-  color: white;
+  /* কন্টেন্ট লেআউট */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: clamp(16px, 3vw, 24px); /* রেস্পন্সিভ গ্যাপ */
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch; /* iOS স্মুথ স্ক্রল */
 }
 
-/* লোগো + নাম সেকশন */
+
+/* লোগো এবং টাইটল রেস্পন্সিভ */
 .menu-header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
+  gap: 8px;
+  margin-bottom: clamp(12px, 2vw, 16px);
+  text-align: center;
 }
 
 .menu-header img {
-  width: 64px;
-  height: 64px;
-  border-radius: 20px;
+  width: clamp(48px, 10vw, 64px); /* রেস্পন্সিভ লোগো সাইজ */
+  height: clamp(48px, 10vw, 64px);
+  border-radius: clamp(12px, 1.5vw, 20px);
   object-fit: cover;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .menu-header h2 {
-  font-size: 24px;
+  font-family: 'Tiro Bangla', serif !important;
+  font-size: clamp(20px, 5vw, 24px); /* ফ্লেক্সিবল ফন্ট সাইজ */
   font-weight: 700;
   color: white;
-  margin-bottom: 0px;
+  line-height: 1.2;
+  margin: 0;
 }
 
 .menu-header p {
-  font-size: 14px;
-  color: #4FD1C5; /* teal-300 */
+  font-family: 'Tiro Bangla', serif !important;
+  font-size: clamp(12px, 3vw, 14px);
+  color: #4FD1C5;
   font-weight: 500;
+  margin: 0;
 }
 
-/* ন্যাভিগেশন গ্রিড */
+
+/* নেভিগেশন গ্রিড - রেস্পন্সিভ */
 .crystal-mist-menu nav {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* ২ কলাম */
+  gap: clamp(8px, 2vw, 12px);
   width: 100%;
 }
 
 .crystal-mist-menu nav button {
-  padding: 14px 16px;
-  border-radius: 12px;
+  font-family: 'Tiro Bangla', serif !important;
+  font-size: clamp(14px, 3.5vw, 18px); /* ফন্ট সাইজ রেস্পন্সিভ */
+  font-weight: 600;
+  padding: clamp(10px, 2.5vw, 14px) clamp(8px, 2vw, 16px);
+  border-radius: clamp(10px, 1.5vw, 12px);
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: white;
-  font-weight: 500;
-  font-size: 15px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  justify-content: left;
+  gap: clamp(6px, 1.5vw, 10px);
   transition: all 0.3s ease;
   backdrop-filter: blur(4px);
+  min-height: 44px; /* টাচ টার্গেট ন্যূনতম সাইজ */
 }
 
-
-/* CTA বাটন - ছবির Get Started এর মতো */
+/* CTA বাটন রেস্পন্সিভ */
 .cta-button {
+  font-family: 'Tiro Bangla', serif !important;
   width: 100%;
-  padding: 16px;
+  padding: clamp(12px, 3vw, 16px);
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 16px;
+  border-radius: clamp(12px, 1.8vw, 16px);
   color: white;
-  font-weight: 600;
-  font-size: 18px;
+  font-weight: 700;
+  font-size: clamp(16px, 4vw, 20px);
   transition: all 0.3s ease;
   margin-top: 8px;
 }
 
 .cta-button:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(184, 144, 240, 0.3);
   transform: translateY(-2px);
 }
 
@@ -138,4 +145,26 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 13px;
   color: rgba(255, 255, 255, 0.6);
 }
+
+body.menu-open {
+  overflow: hidden !important;
+  touch-action: none; /* মোবাইলে টাচ স্ক্রল বন্ধ */
+}
+
+/* পপ-আপ কনটেইনার */
+.mobile-menu-wrapper {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 9999 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 16px !important; /* ছোট স্ক্রিনে প্যাডিং */
+}
+
+
+
 

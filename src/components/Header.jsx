@@ -133,13 +133,12 @@ const Header = ({
             ))}
           </nav>
         </div>
-
+      </header>
         {/* ============ মোবাইল মেনু (পরিবর্তিত) ============ */}
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
-  className="lg:hidden fixed inset-0 z-50 bg-black/90 backdrop-blur-sm overflow-hidden flex justify-center items-center"
-  
+  className="lg:hidden fixed inset-0 z-[2000] bg-black/60 backdrop-blur-sm overflow-hidden flex justify-center items-center p-2 sm:p-4"  
   initial={{ opacity: 0 }}
   animate={{ opacity: 1 }}
   exit={{ opacity: 0 }}
@@ -154,9 +153,7 @@ const Header = ({
               {/* ফ্রস্টেড গ্লাস কার্ড */}
               <motion.div
   className="crystal-mist-menu"
-  
-  // ওপেন হলে: মাঝ থেকে ফুস করে উঠবে
-  initial={{ 
+    initial={{ 
     scale: 0, 
     y: 100, 
     opacity: 0 
@@ -167,7 +164,6 @@ const Header = ({
     opacity: 1 
   }}
 
-  // ক্লোজ হলে: নিচে ডুবে যাবে
   exit={{ 
     scale: 0.3, 
     y: 300, 
@@ -183,7 +179,9 @@ const Header = ({
   }}
 >
   {/* লোগো + নাম */}
-  <div className="menu-header">
+  <div className="menu-header" select: none               
+  onClick={() => navigateTo("home")}
+>
     <img
       src="/Al-barakahIT-logo.png"
       alt="Logo"
@@ -243,7 +241,7 @@ const Header = ({
             </motion.div>
           )}
         </AnimatePresence>
-      </header>
+      
     </>
   );
 };
